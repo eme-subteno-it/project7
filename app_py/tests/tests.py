@@ -1,37 +1,29 @@
 #! /usr/bin/env python
-from app.models import Parsing
+from app.models import Parsing, Map, Wiki
 import pytest
 
-
-question = "Connais-tu l'adresse d'Openclassrooms ?"
 
 class TestParsing:
 
     def setup_method(self):
+        question = "Connais-tu l'adresse de la Tour Eiffel ?"
         self.parsing = Parsing(question)
 
     def test_parsing_question(self):
-        assert self.parsing.question == question
-
-    def test_analyze_words(self):
-        for word in self.parse_word:
-            pass
+        self.parsing.question = " Connais-tu l'adresse d'Openclassrooms ? "
+        assert self.parsing.question == " Connais-tu l'adresse d'Openclassrooms ? "
 
 
-class TestQuestion:
+class TestMap:
+
+    def test_get_geocode(self):
+        return [{
+            'formatted_address': '7 Cité Paradis, 75010 Paris, France',
+            'geometry': {
+                'location': {'lat': 48.8748465, 'lng': 2.3504873}
+            }
+        }]
 
 
-    def test_get_question(self, question):
-        self.question = "Est-ce que tu connais l'adresse d'Openclassrooms ?"
-
-
-# Récupération des données reçu via le formulaire de question
-
-
-# Tester l'API Google Maps
-
-
-# Création d'un mock après la récupération de la réponse de la part de l'API Google Maps
-
-
-# Tests sur AJAX
+class TestWiki:
+    pass

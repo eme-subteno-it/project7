@@ -13,14 +13,24 @@
     </div>
 </header>
 <div class="container-fluid main">
+    <div id="divOverlayLoad" class="sf-overlay d-none">
+        <div class="div-loader">
+            <i class="fas fa-spinner fa-pulse fa-3x"></i>
+            <p><small>Chargement en cours, patientez...</small></p>
+        </div>
+    </div>
+    <div class="img_form d-flex justify-content-center">
+        <img class="img img-fluid" src="static/img/clap-trap-crasy.png" alt="">
+    </div>
     <div class="container main-form">
         <div class="container-tchat"></div>
-        <form>
+        <form id="question">
             <div class="form-group">
                 <br/>
-                <textarea class="form-control" id="mess-user" placeholder="Poser votre question..." rows="3"></textarea>
+                <textarea class="form-control" name="mess-user" id="mess-user" placeholder="Poser votre question..." rows="3"></textarea>
             </div>
-          </form>
+            <button type="submit" id="send" role="submit" class="btn btn-dark ml-auto mr-auto">Envoyer</button>
+        </form>
     </div>
 </div>
 <footer>
