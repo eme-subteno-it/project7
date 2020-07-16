@@ -1,0 +1,29 @@
+#! /usr/bin/env python
+from app_py.models.Map import Map
+from io         import BytesIO
+import json
+import urllib.request
+
+
+class TestMap:
+
+    def setup_method(self):
+        location = "openclassrooms"
+        self.location = Map(location)
+
+    def test_get_geocode(self, monkeypatch):
+        result = [{
+            'address_components': [{'long_name': 'Cité Paradis',}],
+            'formatted_address': '7 Cité Paradis, 75010 Paris, France',
+            'geometry': {
+                'location': {'lat': 48.8748465, 'lng': 2.3504873}
+            }
+        }]
+
+        def mockreturn(request):
+            return BytesIO(json.dumps(result).encode())
+        
+        monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
+        if result:
+            address = result[0]
+        assert Map.get_geocode(self) == address
