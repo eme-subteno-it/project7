@@ -16,11 +16,25 @@ def index():
 @app.route('/get_response/', methods=['POST'])
 def get_response():
     response = request.get_data(cache=False, as_text=True)
+    error = {'error': 'Il faut taper sur les touches de ton clavier si tu recherches un endroit à visiter.'}
+    print(response)
 
-    question = Parsing(response)
-    values = question.parsing_question()
+    if response:
+        question = Parsing(response)
+        values = question.parsing_question()
 
-    mapping = Map(values)
-    result = mapping.get_geocode()
+        mapping = Map(values)
+        result = mapping.get_geocode()
 
-    return json.dumps(result)
+        return json.dumps(result)
+    else:
+        return json.dumps(error)
+
+@app.route('/get_story/', methods=['POST'])
+def get_story():
+    response = request.get_data(cache=False, as_text=True)
+
+    wiki = Wiki(response)
+    story = wiki.get_story()
+
+    return json.dumps(story)

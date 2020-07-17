@@ -9,6 +9,20 @@ $(document).ready(function () {
         textZone(dataInput.value, false)
 
         $('#mess-user').val('')
+        // The bot search...
+        var i = 3
+        var loop = setInterval(searchBot, 500);
+
+        function searchBot() {
+            i--;
+            if (i == 0) {
+                clearInterval(loop)
+                $("#divOverlayLoad").addClass('d-none');
+                getTheResponse();
+            } else {
+                $("#divOverlayLoad").removeClass('d-none');
+            }
+        }
 
         // Return the response GrandPy Bot
         function getTheResponse() {
@@ -23,7 +37,10 @@ $(document).ready(function () {
                 if (!address) {
                     lastText = 'Mmm, je suis embêté, je ne trouve pas l\'endroit que tu cherches.';
                     textZone(lastText, true);
+                } else if (address.error){
+                    textZone(address.error, true);
                 } else {
+                    var street = address.address_components;
                     lastText = 'Bien sûr mon poussin ! La voici : ' + address.formatted_address;
                     textZone(lastText, true);
 
@@ -38,6 +55,35 @@ $(document).ready(function () {
                     latMap = address.geometry.lat;
                     lngMap = address.geometry.lng;
                     initMap(latMap, lngMap);
+
+                    if (street) {
+                        getStory(street);
+                    } else {
+                        getStory(address.formatted_address);
+                    }
+                }
+            })
+        }
+
+        // GrandPy Bot is telling a story about the address...
+        function getStory(address) {
+            $.ajax({
+                method: 'POST',
+                url: '/get_story/',
+                data: address,
+            }).done(function (data) {
+                var json = JSON.parse(data)
+
+                try {
+                    var story = json.extract
+                    var url = json.url
+                    var beforeText = 'Mais t\'ai-je déjà raconté l\'histoire de ce quartier qui m\'a vu en culottes courtes ? '
+                    var textUrl = 'Voici un lien pour en savoir plus : ' + url
+                    textZone(beforeText, true)
+                    textZone(story, true)
+                    textZone(textUrl, true)
+                } catch (error) {
+                    textZone(error.message, true)
                 }
             })
         }
