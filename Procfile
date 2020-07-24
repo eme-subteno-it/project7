@@ -1,2 +1,2 @@
-web: gunicorn app_py:app
-init: FLASK_APP=run.py flask index
+web: gunicorn app_py:run
+init: FLASK_APP=run.py
