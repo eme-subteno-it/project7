@@ -1,3 +1,3 @@
-from models import Parsing
-from models import Map
-from models import Wiki
+from . import Parsing
+from . import Map
+from . import Wiki
