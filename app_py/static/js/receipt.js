@@ -77,11 +77,14 @@ $(document).ready(function () {
                 try {
                     var story = json.extract
                     var url = json.url
-                    var beforeText = 'Mais t\'ai-je déjà raconté l\'histoire de ce quartier qui m\'a vu en culottes courtes ? '
-                    var textUrl = 'Voici un lien pour en savoir plus : ' + url
-                    textZone(beforeText, true)
-                    textZone(story, true)
-                    textZone(textUrl, true)
+                    var textUrl = 'Voici un lien pour en savoir plus : '
+                    var link = '<a target="_blank" href="' + url + '">Clique ici</a>';
+
+                    
+                    var response = 'Mais t\'ai-je déjà raconté l\'histoire de ce quartier qui m\'a vu en culottes courtes ? <br/>' + story + '<br/>' + textUrl + link
+                    textZone(response, true)
+                    // textZone(story, true)
+                    // textZone(textUrl, true)
                 } catch (error) {
                     textZone(error.message, true)
                 }
@@ -105,7 +108,7 @@ $(document).ready(function () {
 
         $container.append(response);
         $parent.append($container);
-        response.text(lastText);
+        response.html(lastText);
 
         var containerChat = document.getElementById('container-tchat');
         containerChat.scrollTop = containerChat.scrollHeight;

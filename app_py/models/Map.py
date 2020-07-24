@@ -1,7 +1,8 @@
 #! /usr/bin/env python
 import googlemaps
 import requests
-import config
+from config import API_KEY_GOOGLE
+
 
 class Map:
 
