@@ -1,2 +1,2 @@
-web: gunicorn app_py:app --preload -b grandpy-bot-project7.herokuapp
+web: gunicorn app_py:app
 init: FLASK_APP=run.py flask
