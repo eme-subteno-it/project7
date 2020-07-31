@@ -1,1 +1,1 @@
-web: gunicorn app_py.models:app --timeout 1200
+web: gunicorn run:app
