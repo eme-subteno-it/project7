@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
-class Parsing:
 
+class Parsing:
 
     def __init__(self, question):
         self.question = question

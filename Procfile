@@ -1,2 +1,1 @@
-heroku ps:scale web=1
-web: gunicorn app_py:app --timeout 1200
+web: gunicorn app_py.models:app --timeout 1200

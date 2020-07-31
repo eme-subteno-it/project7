@@ -4,7 +4,6 @@ import requests
 
 class Wiki:
 
-
     def __init__(self, keyword):
         self.keyword = keyword
         self.session = requests.Session()
@@ -18,7 +17,7 @@ class Wiki:
         return page_id
 
     def get_story(self):
-        
+
         params = {
             'action': 'query',
             'generator': 'prefixsearch',

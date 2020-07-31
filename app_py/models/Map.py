@@ -6,7 +6,6 @@ from config import API_KEY_GOOGLE
 
 class Map:
 
-
     def __init__(self, location):
         self.location = location
 
