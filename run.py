@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 import app_py
-from app_py.main import app
+from app_py import app
 
 
 if __name__ == '__main__':
