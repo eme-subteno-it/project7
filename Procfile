@@ -1,3 +1,3 @@
 web: gunicorn app_py:app
-init: FLASK_APP=run.py flask run
+init: python3 run.py
 heroku ps:scale web=1
