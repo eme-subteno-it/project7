@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 from flask import Flask, render_template, url_for, request, json
-from app_py.models.parsing import parsing
+from app_py.models.parsing import Parsing
 from app_py.models.Map import Map
 from app_py.models.Wiki import Wiki
 
