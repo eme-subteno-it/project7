@@ -1,7 +1,12 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+""" The model's module contains all classes usefull for the application """
+
 import requests
 
 
+# pylint: disable=invalid-name, too-few-public-methods
 class Wiki:
 
     def __init__(self, keyword):
@@ -9,7 +14,8 @@ class Wiki:
         self.session = requests.Session()
         self.url = 'https://fr.wikipedia.org/w/api.php'
 
-    def get_page_id(self, data):
+    @staticmethod
+    def get_page_id(data):
         keys = data.keys()
         list_keys = list(keys)
         page_id = list_keys[0]
@@ -45,7 +51,7 @@ class Wiki:
         get_url_page = self.session.get(url=self.url, params=get_url)
         url = get_url_page.json()
 
-        page_id = self.get_page_id(data['query']['pages'])
+        page_id = Wiki.get_page_id(data['query']['pages'])
 
         result['extract'] = data['query']['pages'][str(page_id)]['extract']
         result['url'] = url['query']['pages'][str(page_id)]['fullurl']

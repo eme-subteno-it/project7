@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-from app_py.models.Parsing import Parsing
+from app_py.models.ParsingBot import ParsingBot
 from io import BytesIO
 
 
@@ -7,7 +7,7 @@ class TestParsing:
 
     def setup_method(self):
         question = " Connais-tu l'adresse d'Openclassrooms ? "
-        self.parsing = Parsing(question)
+        self.parsing = ParsingBot(question)
 
     def test_set_question(self):
         assert self.parsing.question == " Connais-tu l'adresse d'Openclassrooms ? "

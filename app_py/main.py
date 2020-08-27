@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 from flask import Flask, render_template, url_for, request, json
-from app_py.models.Parsing_flask import Parsing_flask
+from app_py.models.ParsingBot import ParsingBot
 from app_py.models.Map import Map
 from app_py.models.Wiki import Wiki
 
@@ -20,7 +20,7 @@ def get_response():
     print(response)
 
     if response:
-        question = Parsing_flask(response)
+        question = ParsingBot(response)
         values = question.parsing_question()
 
         mapping = Map(values)

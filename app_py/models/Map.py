@@ -1,6 +1,10 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+    The model's module contains all classes usefull for the application
+"""
+
 import googlemaps
 from config import API_KEY_GOOGLE
 
@@ -18,7 +22,7 @@ class Map:
 
     def get_geocode(self):
         """
-            This method connects to the GoogleMap API using an API key
+            This method connects to the GoogleMaps API using an API key
             and uses its geocode method to retrieve and return the coordinates
             of the location chosen by the user.
         """

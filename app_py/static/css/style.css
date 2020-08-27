@@ -159,8 +159,16 @@ footer {
     padding:63px 0px 0px 0px;
     text-align: center;
     color: #fff;
+
 }
 
 .elements-footer {
     background-color: #23272b;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.link_github {
+    text-decoration: none;
+    color: #ffbe00;
 }
