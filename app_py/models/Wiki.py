@@ -8,6 +8,12 @@ import requests
 
 # pylint: disable=invalid-name, too-few-public-methods
 class Wiki:
+    """
+        This class get the searched address and retrieves the wikipedia related to it.
+        :param arg1: It's the searched address.
+        :param arg2: The wiki api's session for get the datas.
+        :param arg3: The api's url to get the datas.
+    """
 
     def __init__(self, keyword):
         self.keyword = keyword
@@ -16,6 +22,9 @@ class Wiki:
 
     @staticmethod
     def get_page_id(data):
+        """
+            Method to get the page id to target the datas.
+        """
         keys = data.keys()
         list_keys = list(keys)
         page_id = list_keys[0]
@@ -23,7 +32,9 @@ class Wiki:
         return page_id
 
     def get_story(self):
-
+        """
+            Method to get the api's datas and returns to json format.
+        """
         params = {
             'action': 'query',
             'generator': 'prefixsearch',
