@@ -34,6 +34,12 @@ header {
     width: 22%;
 }
 
+@media screen and (max-width: 768px) {
+    .clap-trap-crasy-img {
+        opacity: 0;
+    }
+}
+
 /* ------------------------ */
 /* -------- Form ---------- */
 /* ------------------------ */
@@ -166,9 +172,4 @@ footer {
     background-color: #23272b;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.link_github {
-    text-decoration: none;
-    color: #ffbe00;
 }
