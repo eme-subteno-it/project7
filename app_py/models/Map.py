@@ -6,13 +6,7 @@
 """
 import os
 import googlemaps
-
-
-if os.environ.get('API_KEY_GOOGLE') is None:
-    from config import API_KEY_GOOGLE
-    api_key_google = API_KEY_GOOGLE
-else:
-    api_key_google = os.environ['API_KEY_GOOGLE']
+from config import API_KEY_GOOGLE
 
 
 # pylint: disable=invalid-name, too-few-public-methods
@@ -32,7 +26,7 @@ class Map:
             and uses its geocode method to retrieve and return the coordinates
             of the location chosen by the user.
         """
-        gmaps = googlemaps.Client(api_key_google)
+        gmaps = googlemaps.Client(API_KEY_GOOGLE)
         geocode_result = gmaps.geocode(self.location)
         address = {}
 
