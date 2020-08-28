@@ -8,7 +8,6 @@ from app_py.models.Map import Map
 from app_py.models.Wiki import Wiki
 
 app = Flask(__name__)
-app.config.from_object('config')
 
 
 @app.route('/')
