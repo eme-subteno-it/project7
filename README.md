@@ -43,3 +43,6 @@ ou
 
 ## Développement
 L'application web a été conçu en orienté objet (côté backend) afin de pouvoir différencier la gestion de l'API Google Maps, le système de parsing pour les questions des utilisateurs et l'API de Wikipédia. Ces classes sont situés dans le dossier /models. À la racine de l'application, nous pouvons retrouver un fichier main.py qui gère les différentes routes de l'app. 
+
+## Lien du projet
+[Projet 7](https://grandpy-bot-project7.herokuapp.com/ "GrandPy Bot")
