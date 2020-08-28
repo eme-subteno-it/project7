@@ -1,5 +1,5 @@
 # Documentation
-==================
+
 ## Introduction
 Cette application web utilise le micro-framework Flask et intéragit avec l'API Google Maps afin de pouvoir indiquer à l'utilisateur, où se situe l'adresse qu'il recherche. Elle intéragit également avec l'API Wikipédia qui permet de récupérer du contenu sur l'adresse récupérée pour ainsi, raconter une petite histoire à notre utilisateur. 
 Cette application est créé avec le langage de programmation Python pour la partie serveur et JavaScript pour la partie client. Aucune base de données n'est nécessaire.
@@ -12,8 +12,6 @@ Si vous possédez cette clé, aller dans le fichier config.py  et remplacer la v
 API_KEY_GOOGLE = os.environ['API_KEY_GOOGLE']
 
 **par** API_KEY_GOOGLE = [VOTRE_CLÉ]
-
-==================
 
 _Utiliser SSH_ : 
 
