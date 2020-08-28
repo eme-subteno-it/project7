@@ -17,6 +17,7 @@ def index():
     """ The main page """
     return render_template('index.html')
 
+
 @app.route('/get_response/', methods=['POST'])
 def get_response():
     """ Get the user's question, parsing the question and return the data's google maps api. """
@@ -36,6 +37,7 @@ def get_response():
         return json.dumps(result)
 
     return json.dumps(error)
+
 
 @app.route('/get_story/', methods=['POST'])
 def get_story():

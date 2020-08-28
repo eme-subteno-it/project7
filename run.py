@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-import app_py
 from app_py import app
 
 
