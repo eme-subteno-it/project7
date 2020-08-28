@@ -38,6 +38,12 @@ header {
     .clap-trap-crasy-img {
         opacity: 0;
     }
+    .main {
+        top: 0px !important;
+    }
+    .img_footer img {
+        width: auto;
+    }
 }
 
 /* ------------------------ */
