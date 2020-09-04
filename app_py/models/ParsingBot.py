@@ -68,12 +68,12 @@ BAD_WORDS = ["a", "abord", "absolument", "adresse", "afin", "ah", "ai", "aie", "
              "tellement", "telles", "tels", "tenant", "tend", "tenir", "tente", "tes", "tic",
              "tien", "tienne", "tiennes", "tiens", "toc", "toi", "toi-même", "ton", "touchant",
              "toujours", "tous", "tout", "toute", "toutefois", "toutes", "treize", "trente", "tres",
-             "trois", "troisième", "troisièmement", "trop", "très", "tsoin", "tsouin", "tu", "té",
-             "u", "un", "une", "unes", "uniformement", "unique", "uniques", "uns", "v", "va",
-             "vais", "vas", "vers", "via", "vif", "vifs", "vingt", "vivat", "vive", "vives", "vlan",
-             "voici", "voilà", "vont", "vos", "votre", "vous", "vous-mêmes", "vu", "vé", "vôtre",
-             "vôtres", "w", "x", "y", "z", "zut", "à", "â", "ça", "ès", "étaient", "étais", "était",
-             "étant", "été", "être", "ô"]
+             "trois", "troisième", "troisièmement", "trop", "trouve", "trouves", "très", "tsoin",
+             "tsouin", "tu", "té", "u", "un", "une", "unes", "uniformement", "unique", "uniques",
+             "uns", "v", "va", "vais", "vas", "vers", "via", "vif", "vifs", "vingt", "vivat",
+             "vive", "vives", "vlan", "voici", "voilà", "vont", "vos", "votre", "vous",
+             "vous-mêmes", "vu", "vé", "vôtre", "vôtres", "w", "x", "y", "z", "zut", "à", "â",
+             "ça", "ès", "étaient", "étais", "était", "étant", "été", "être", "ô"]
 
 
 # pylint: disable=invalid-name, too-few-public-methods
