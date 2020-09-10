@@ -7,17 +7,16 @@ import urllib.request
 
 class TestMap:
 
-    def setup_method(self):
-        location = "openclassrooms"
-        self.map = Map(location)
-
     def test_get_geocode(self, monkeypatch):
+        location = "openclassrooms"
+        the_map = Map(location)
+
         result = [{
-            'address_components': 'Cité Paradis',
-            'formatted_address': '7 Cité Paradis, 75010 Paris, France',
+            'address_components': 'Quai de la Charente',
+            'formatted_address': '10 Quai de la Charente, 75019 Paris, France',
             'geometry': {
-                'lat': 48.8748465,
-                'lng': 2.3504873
+                'lat': 48.8975156,
+                'lng': 2.3833993
             }
         }]
 
@@ -27,6 +26,6 @@ class TestMap:
         monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
         if result:
             address = result[0]
-            assert self.map.get_geocode() == address
+            assert the_map.get_geocode() == address
         else:
-            assert self.map.get_geocode() == False
+            assert the_map.get_geocode() is False
