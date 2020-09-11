@@ -2,7 +2,7 @@
 from app_py.models.Map import Map
 from io         import BytesIO
 import json
-import urllib.request
+import requests
 
 
 class TestMap:
@@ -22,8 +22,8 @@ class TestMap:
 
         def mockreturn(request):
             return BytesIO(json.dumps(result).encode())
-        
-        monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
+
+        monkeypatch.setattr(requests, 'get', mockreturn)
         if result:
             address = result[0]
             assert the_map.get_geocode() == address

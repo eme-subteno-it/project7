@@ -2,7 +2,7 @@
 from app_py.models.Wiki import Wiki
 from io                 import BytesIO
 import json
-import urllib.request
+import requests
 
 
 class TestWiki:
@@ -33,5 +33,5 @@ class TestWiki:
         def mockreturn(request):
             return BytesIO(json.dumps(result).encode())
         
-        monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
+        monkeypatch.setattr(requests, 'get', mockreturn)
         assert self.wiki.get_story() == result

@@ -83,8 +83,6 @@ $(document).ready(function () {
                     
                     var response = 'Mais t\'ai-je déjà raconté l\'histoire de ce quartier qui m\'a vu en culottes courtes ? <br/>' + story + '<br/>' + textUrl + link
                     textZone(response, true)
-                    // textZone(story, true)
-                    // textZone(textUrl, true)
                 } catch (error) {
                     textZone(error.message, true)
                 }
