@@ -40,6 +40,7 @@ $(document).ready(function () {
                 } else if (address.error){
                     textZone(address.error, true);
                 } else {
+                    let parseAddress = address.formatted_address.split(',')[0];
                     var street = address.address_components;
                     lastText = 'Bien sûr mon poussin ! La voici : ' + address.formatted_address;
                     textZone(lastText, true);
@@ -55,8 +56,9 @@ $(document).ready(function () {
                     latMap = address.geometry.lat;
                     lngMap = address.geometry.lng;
                     initMap(latMap, lngMap);
-
-                    if (street) {
+                    if (parseAddress) {
+                        getStory(parseAddress);
+                    } else if (street) {
                         getStory(street);
                     } else {
                         getStory(address.formatted_address);

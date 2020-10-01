@@ -63,8 +63,9 @@ class Wiki:
         url = get_url_page.json()
 
         page_id = Wiki.get_page_id(data['query']['pages'])
+        page_id_url = Wiki.get_page_id(url['query']['pages'])
 
         result['extract'] = data['query']['pages'][str(page_id)]['extract']
-        result['url'] = url['query']['pages'][str(page_id)]['fullurl']
+        result['url'] = url['query']['pages'][str(page_id_url)]['fullurl']
 
         return result

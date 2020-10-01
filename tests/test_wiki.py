@@ -18,7 +18,7 @@ class TestWiki:
                 'ns': 0,
                 'title': 'Quai de la Charente',
                 'index': 1,
-                'extract': 'Le quai de la Charente est un quai situé le long du canal Saint-Denis, à Paris, dans le 19e arrondissement. \n\n'
+                'extract': 'Le quai de la Charente est un quai situé le long du canal Saint-Denis, à Paris, dans le 19e arrondissement.'
             }
         }
         get_page_id = self.wiki.get_page_id(data)
@@ -26,7 +26,7 @@ class TestWiki:
 
     def test_get_story(self, monkeypatch):
         result = {
-            'extract': 'Le quai de la Charente est un quai situé le long du canal Saint-Denis, à Paris, dans le 19e arrondissement. \n\n',
+            'extract': 'Le quai de la Charente est un quai situé le long du canal Saint-Denis, à Paris, dans le 19e arrondissement.',
             'url': 'https://fr.wikipedia.org/wiki/Quai_de_la_Charente',
         }
 
