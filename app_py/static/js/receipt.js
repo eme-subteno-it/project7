@@ -57,7 +57,9 @@ $(document).ready(function () {
                     lngMap = address.geometry.lng;
                     initMap(latMap, lngMap);
                     if (parseAddress) {
-                        getStory(parseAddress);
+                        goodAddress = extractNumber(parseAddress);
+
+                        getStory(goodAddress);
                     } else if (street) {
                         getStory(street);
                     } else {
@@ -112,5 +114,15 @@ $(document).ready(function () {
 
         var containerChat = document.getElementById('container-tchat');
         containerChat.scrollTop = containerChat.scrollHeight;
+    }
+
+    function extractNumber(str) {
+        let getStr = str;
+        let matches = getStr.match(/(\d+)/);
+
+        if (matches) {
+            getStr = getStr.replace(matches[0], '');
+        }
+        return getStr;
     }
 });
